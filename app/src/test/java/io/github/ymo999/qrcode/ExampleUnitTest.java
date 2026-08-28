@@ -1,4 +1,4 @@
-package com.example.qrcodegenerator;
+package io.github.ymo999.qrcode;
 
 import org.junit.Test;
 

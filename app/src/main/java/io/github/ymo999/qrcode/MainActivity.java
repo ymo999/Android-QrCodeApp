@@ -1,4 +1,4 @@
-package com.example.qrcodegenerator;
+package io.github.ymo999.qrcode;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
