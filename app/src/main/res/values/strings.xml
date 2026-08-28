@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QrCodeGenerator</string>
+    <string name="tv_app_title">二次元コードメーカー</string>
+    <string name="desc_image">二次元コード</string>
+    <string name="hint_input_text">二次元コードにする文字列</string>
+    <string name="btn_generate">二次元コードを生成</string>
 </resources>

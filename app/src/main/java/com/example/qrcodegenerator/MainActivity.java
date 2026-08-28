@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +14,8 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView imageViewQr;
-    private Button buttonGenerate;
+    private Button btGenerate;
+    private EditText etInputText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +23,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageViewQr = findViewById(R.id.imageViewQr);
-        buttonGenerate = findViewById(R.id.buttonGenerate);
+        btGenerate = findViewById(R.id.btnGenerate);
+        etInputText = findViewById(R.id.etInputText);
 
-        buttonGenerate.setOnClickListener(new View.OnClickListener() {
+        btGenerate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // QRコードに変換したい文字列
-                String textToEncode = "https://example.com";
+                // 入力欄から文字列を取得
+                String textToEncode = etInputText.getText().toString().trim();
+
+                // 未入力チェック
+                if (textToEncode.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "文字列を入力してください", Toast.LENGTH_SHORT).show();
+                }
+
                 // QRコードのサイズ（ピクセル）
                 int size = 500;
 

@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp">
+    android:padding="24dp">
 
-    <!-- QRコードを表示するImageView -->
-    <ImageView
-        android:id="@+id/imageViewQr"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginBottom="24dp"
-        android:contentDescription="QRコード" />
-
-    <!-- タップでQRコードを生成するボタン -->
-    <Button
-        android:id="@+id/buttonGenerate"
+    <!-- タイトル -->
+    <TextView
+        android:id="@+id/tvAppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="QRコードを生成" />
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/m_plus_rounded_1c_bold"
+        android:text="@string/tv_app_title"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- 二次元コードを表示するカード -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardQr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:contentPadding="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewQr"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:contentDescription="@string/desc_image" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 二次元コードにする文字列の入力欄 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilInputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/hint_input_text"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etInputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/m_plus_rounded_1c"
+            android:inputType="text"
+            android:maxLines="3" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- タップで二次元コードを生成するボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGenerate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/m_plus_rounded_1c_bold"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:text="@string/btn_generate"
+        android:textSize="16sp"
+        app:cornerRadius="12dp" />
 
 </LinearLayout>

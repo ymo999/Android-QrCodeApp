@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- ライトテーマ用 -->
+    <color name="light_primary">#00696D</color>
+    <color name="light_on_primary">#FFFFFF</color>
+
+    <!-- ダークテーマ用 -->
+    <color name="dark_primary">#4EDADF</color>
+    <color name="dark_on_primary">#003739</color>
 </resources>
