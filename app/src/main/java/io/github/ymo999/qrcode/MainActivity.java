@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 // 未入力チェック
                 if (textToEncode.isEmpty()) {
                     Toast.makeText(MainActivity.this, "文字列を入力してください", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 // QRコードのサイズ（ピクセル）
